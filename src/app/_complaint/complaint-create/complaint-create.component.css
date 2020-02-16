@@ -1,0 +1,25 @@
+.mat-step-icon-selected{
+    width: 35px;
+    height: 35px;
+    background-image: linear-gradient(to bottom, #f5515f, #9f041b);
+}
+.mat-step-icon{
+    width: 35px;
+    height: 35px;
+    background-color: #ebebeb;
+}
+.mat-horizontal-stepper-header .mat-step-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #ebebeb;
+}
+
+.txt-input{
+    width: 230px;
+    height: 39.2px;
+    background-color: #f9f9f9;
+  }
+  .mat-form-field-appearance-fill .mat-form-field-flex 
+  {
+      background-color: #ffffff
+  } 
