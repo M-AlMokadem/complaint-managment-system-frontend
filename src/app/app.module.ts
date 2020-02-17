@@ -41,7 +41,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

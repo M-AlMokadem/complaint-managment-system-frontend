@@ -23,3 +23,15 @@
   {
       background-color: #ffffff
   } 
+  .mat-button.mat-button-base{
+    width: 30%;
+    height: 20%;
+    border-radius: 18.9px;
+    box-shadow: 0 6px 31px -4px rgba(189, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, #f5515f, #9f041b);
+    color: #ffffff
+  }
+  .custom{
+    min-width: 230px;
+    min-height: 165px;
+  }
