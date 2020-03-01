@@ -16,6 +16,7 @@ import { MatStepperModule, MatFormField, MatFormFieldModule, MatInputModule, Mat
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatSelectModule,
     FlexLayoutModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

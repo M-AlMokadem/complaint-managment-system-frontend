@@ -1,1 +1,53 @@
-<p>login works!</p>
+<!-- <p>login works!</p>
+<div class="bounds">
+
+    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+
+        <div fxFlex="35" fxFlex.xs="55">
+            <img src="./assets/img/group.svg" class="Group">
+
+            <p class="footer">© 2019 VODAFONE GROUP. VODAFONE GROUP PLC</p>
+
+
+        </div>
+
+        <div fxFlex="100" style="height: 100vh;" class="sec2" [hidden]="loader != false ">
+            <p class="Sign-in-to-SmartWall">SIGN IN TO iDIALOGUE</p>
+            <p class="Please-insert-your-l">Please insert your login details below</p>
+
+            <form [formGroup]="loginForm" class="example-form" (ngSubmit)="login()">
+                <mat-form-field class="ntAccount" appearance="outline">
+                    <input formControlName="ntAccount" [(ngModel)]="loginModel.ntAccount" matInput placeholder="NT Account">
+                    <mat-error *ngIf="hasError('ntAccount', 'required')" style="color: white;">NT Account is required</mat-error>
+                </mat-form-field>
+                <br />
+                <br *ngIf="hasError('ntAccount','required') && loginForm.controls['ntAccount']?.touched " />
+                <mat-form-field class="ntAccount" appearance="outline">
+                    <input formControlName="password" type="password" [(ngModel)]="loginModel.password" matInput placeholder="Your Password">
+                    <mat-error *ngIf="hasError('password', 'required')" style="color: white">Password is required</mat-error>
+                </mat-form-field>
+                <br />
+                <br *ngIf="hasError('password', 'required') && loginForm.controls['password']?.touched" />
+
+
+                <button [disabled]="!loginForm.valid" class="Rectangle-2-Copy" mat-raised-button color="warn" type="submit">
+          SIGN IN
+        </button>
+                <mat-error style="text-align: center; margin-left: 72px;margin-top: 9px;color:white">{{loginErrorMSG}}
+                </mat-error>
+
+
+
+            </form>
+
+            <p class="voisTXT">_V O <b>I S</b></p>
+        </div>
+        <div class="loader" style="margin-left: 400px;" [hidden]="loader == false ">
+            <img src="./assets/img/Spinner.gif" />
+            <p style="margin-left: 30%;
+          font-size: larger;">Loading.....</p>
+        </div>
+
+    </div>
+
+</div> -->
