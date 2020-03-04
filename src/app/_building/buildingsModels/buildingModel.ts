@@ -1,5 +1,5 @@
 export interface IBuildingModel {
-    Id: number;
-    Name: string;
+    _id: number;
+    name: string;
     code: string;
 }

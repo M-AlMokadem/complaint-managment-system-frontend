@@ -20,15 +20,15 @@
         <mat-form-field appearance="fill">
           <mat-label>Building</mat-label>
           <mat-select formControlName="buildingControl">
-            <mat-option *ngFor="let item of allBuildings" [value]="item.Id">{{item.Name}}</mat-option>
+          <mat-option *ngFor="let item of allBuildings" [value]="item">{{item.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div layout="row">
         <mat-form-field appearance="fill">
           <mat-label>Floor</mat-label>
-          <mat-select [formControl]="floorControl">
-              <mat-option *ngFor="let item of allFloors" [value]="item.Id">{{item.Name}}</mat-option>          
+          <mat-select formControlName="floorControl">
+              <mat-option *ngFor="let item of allFloors" [value]="item">{{item.name}}</mat-option>          
           </mat-select>
         </mat-form-field>
       </div>
@@ -46,9 +46,8 @@
         <p mat-body-strong mat-body-2>Issue Information</p>
         <mat-form-field appearance="Select Issue">
           <mat-label>Select Issue</mat-label>
-          <mat-select [formControl]="issueControl">
-            <mat-option *ngFor="let item of allIssues" [value]="item.id">{{item.name}}</mat-option>          
-            
+          <mat-select formControlName="issueControl">
+            <mat-option *ngFor="let item of allIssues" [value]="item">{{item.name}}</mat-option>           
           </mat-select>
         </mat-form-field>
       </div>
@@ -70,8 +69,9 @@
     <ng-template matStepLabel>Done</ng-template>
     You are now done.
     <div>
-      <button mat-button matStepperPrevious>Back</button>
+      <!-- <button mat-button matStepperPrevious>Back</button> -->
       <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+      {{ticketNumber}}
     </div>
   </mat-step>
 </mat-horizontal-stepper>
