@@ -1,5 +1,5 @@
 export class IssueModel {
-    _id: number;
+    id: number;
     name: string;
     code: string;
 }

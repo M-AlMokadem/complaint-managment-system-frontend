@@ -12,11 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatStepperModule, MatFormField, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatStepperModule, MatFormField,MatSortModule , MatFormFieldModule, MatInputModule, MatSelectModule ,MatPaginatorModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { IssueListComponent } from './_issue/issueModels/components/issue-list/issue-list.component';
+import {MatTableModule} from '@angular/material/table';
+import { ComplaintListComponent } from './_complaint/complaint-list/complaint-list/complaint-list.component';
 
 
 @NgModule({
@@ -25,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     MainNavComponent,
     ComplaintCreateComponent,
+    IssueListComponent,
+    ComplaintListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     FlexLayoutModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,46 @@
+
+  .Mask  {
+    width: 1170px;
+    height: 669px;
+    border-radius: 6.3px;
+    background-color: var(--white);
+  }  
+  
+  .Rectangle-2 {
+    width: 1170px;
+    height: 75px;
+    opacity: 0.24;
+    background-color: var(--light-periwinkle);
+  }
+
+  .Rectangle-2-Copy-2 {
+    width: 1170px;
+    height: 50px;
+    opacity: 0;
+    background-color: #fbfbfb;
+  }
+
+  .Rectangle-2 {
+    width: 1170px;
+    height: 75px;
+    opacity: 0.24;
+    background-color: var(--light-periwinkle);
+  }
+  .Rectangle-5 {
+    width: 147px;
+    height: 35px;
+    border-radius: 2.2px;
+    border: solid 1.1px var(--light-blue-grey);
+  }
+
+  .Oval-2 {
+    width: 8.4px;
+    height: 8.4px;
+    background-color: #f5a623;
+  }
+
+  .Icon-Shade {
+    width: 19px;
+    height: 19px;
+    background-color: var(--light-blue-grey);
+  }
