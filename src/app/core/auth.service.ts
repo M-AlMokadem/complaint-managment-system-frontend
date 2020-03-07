@@ -8,7 +8,6 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
-import { NetworkService } from '../core/network.service';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -18,7 +17,6 @@ export class AuthService implements CanActivate {
   constructor(
     private _router: Router,
     private http: HttpClient,
-    private network: NetworkService
   ) {}
 
   login(user: LoginModel) {
@@ -35,14 +33,14 @@ export class AuthService implements CanActivate {
         .subscribe(
           success => {
             localStorage.clear();
-            window.location.replace('http://localhost:85/login');
+            window.location.replace('http://localhost:85/account/login');
             // window.location.replace('http://localhost:4200/login');
             //  window.location.replace('http://10.230.196.38/smartwallettest/login');
             //window.location.replace('http://10.230.196.38/SmartWalletUI/login');
           },
           error => {
             localStorage.clear();
-            window.location.replace('http://localhost:85/login');
+            window.location.replace('http://localhost:85/account/login');
             // window.location.replace('http://localhost:4200/login');
             // window.location.replace('http://10.230.196.38/smartwallettest/login');
             //window.location.replace('http://10.230.196.38/SmartWalletUI/login');
@@ -73,7 +71,6 @@ export class AuthService implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.network.online) {
       if (this.isAuthenticated()) {
         let userRole = localStorage.getItem('Role');
         if (next.data.role) {
@@ -82,9 +79,6 @@ export class AuthService implements CanActivate {
       } else {
         this.logout();
       }
-    } else {
-      // momken hena na5leeha yroute 3ala page feeha no connection
-    }
   }
   /**
    * this is used to clear anything that needs to be removed
