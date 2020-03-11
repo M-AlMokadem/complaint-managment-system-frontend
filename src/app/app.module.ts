@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatStepperModule, MatFormField,MatSortModule , MatFormFieldModule, MatInputModule, MatSelectModule ,MatPaginatorModule } from '@angular/material';
+import { MatStepperModule, MatFormField,MatSortModule , MatFormFieldModule, MatInputModule, MatSelectModule ,MatPaginatorModule, MatGridListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -54,7 +54,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
