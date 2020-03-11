@@ -1,5 +1,5 @@
 export class FloorModel {
     Id: number;
-    Name: string;
+    name: string;
     code: string;
 }

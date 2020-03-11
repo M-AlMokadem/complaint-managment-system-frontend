@@ -30,6 +30,8 @@ export class ComplaintCreateComponent implements OnInit {
   issueControl = new FormControl('primary');
   fontSizeControl = new FormControl(16, Validators.min(10));
 
+  // SelectedBuilding: any = -1;
+  ticketNumber: number;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,10 +42,10 @@ export class ComplaintCreateComponent implements OnInit {
     this.firstFormGroup = this.formBuilder.group({
       staffidCtrl: ['', Validators.required],
       buildingControl: ['', Validators.required],
+      floorControl: ['', Validators.required],
 
     });
     this.secondFormGroup = this.formBuilder.group({
-      secondCtrl: ['', Validators.required],
       issueControl: ['', Validators.required],
       descriptionCtrl: ['', Validators.required]
     });
@@ -53,6 +55,7 @@ export class ComplaintCreateComponent implements OnInit {
 
   }
   addComplaint() {
+    console.log(this.firstFormGroup.controls['floorControl']);
     this.complaintObject.staffId = this.firstFormGroup.controls['staffidCtrl'].value;
     this.complaintObject.building = this.firstFormGroup.controls['buildingControl'].value;
     this.complaintObject.floor = this.firstFormGroup.controls['floorControl'].value;
@@ -60,10 +63,14 @@ export class ComplaintCreateComponent implements OnInit {
     this.complaintObject.description = this.secondFormGroup.controls['descriptionCtrl'].value;
 
     console.log(this.complaintObject);
-    this.service.post(this.complaintObject, 'floor', 'add').subscribe(
+    // console.log('selected Building is -->', this.SelectedBuilding);
+    this.service.post(this.complaintObject, 'complaint', 'add').subscribe(
       res => {
         //Here we can use the response data
         //res.data.ticketNumber
+        // console.log(res.data.ticketNumber);
+        // this.ticketNumber = res.data.ticketNumber;
+
       },
       error => {
 
@@ -74,6 +81,7 @@ export class ComplaintCreateComponent implements OnInit {
   getAllBuildings() {
     this.service.getAll('building').subscribe((data: IBuildingModel[]) => {
       this.allBuildings = data;
+      // console.log(data);
     });
   }
   getAllFloors() {
@@ -84,9 +92,13 @@ export class ComplaintCreateComponent implements OnInit {
   getAllIssues() {
     this.service.getAll('issue').subscribe((data: IssueModel[]) => {
       this.allIssues = data;
-      console.log(this.allIssues);
     });
   }
+
+  // doSomething(event) {
+  //   debugger;
+  //   console.log(event);
+  // }
 
 
 }
