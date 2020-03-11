@@ -1,0 +1,68 @@
+.Campaigns-Card {
+    width: 866px;
+    height: 797px;
+    object-fit: contain;
+  }
+
+.Rectangle {
+    width: 865px;
+    height: 107px;
+    border-radius: 8px;
+    box-shadow:  0 6px 6px -6px gray;
+    /* box-shadow: 0 6px 34px 0 rgba(231, 230, 230, 0.5); */
+    background-color: #ffff;
+    padding: 20px;
+  }
+
+p {
+  font-size: 25px;   
+  }
+
+.circle{
+  border: solid 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: transparent;
+  display: inline-block;
+}
+
+.yellow {
+  background-color: #f5a623;
+}
+
+.green{
+  background-color:#03c990;
+}
+
+.blue{
+  background-color:#4a90e2;
+}
+
+.deep-red{
+  background-color:#bd0000;
+}
+
+.mat-dialog-actions{
+  display: flex;
+  justify-content: flex-end;
+}
+.mat-dialog-actions > button
+{
+  margin-left: 30px;
+  width: 15%;
+  height: 53px;
+  border-radius: 3.6px;
+  border: solid 0.9px #bd0000;
+  background-color: #ffff;
+  color: #bd0000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mat-dialog-actions > button:hover
+{
+  background-color: #bd0000;
+  color: #ffff
+}
+
