@@ -20,12 +20,14 @@ export class AuthService implements CanActivate {
   ) {}
 
   login(user: LoginModel) {
+    debugger;
     return this.http.post<LoginModel>(
       environment.serverUrl + 'account/login',
       user
     );
   }
   logout() {
+    console.log('isnide logout Function()');
     let LoginUser = JSON.parse(localStorage.getItem('LoginUser'));
     if (LoginUser !== null) {
       this.http
@@ -33,14 +35,14 @@ export class AuthService implements CanActivate {
         .subscribe(
           success => {
             localStorage.clear();
-            window.location.replace('http://localhost:85/account/login');
+            window.location.replace('http://localhost:85/api/account/login');
             // window.location.replace('http://localhost:4200/login');
             //  window.location.replace('http://10.230.196.38/smartwallettest/login');
             //window.location.replace('http://10.230.196.38/SmartWalletUI/login');
           },
           error => {
             localStorage.clear();
-            window.location.replace('http://localhost:85/account/login');
+            window.location.replace('http://localhost:85/api/account/login');
             // window.location.replace('http://localhost:4200/login');
             // window.location.replace('http://10.230.196.38/smartwallettest/login');
             //window.location.replace('http://10.230.196.38/SmartWalletUI/login');
@@ -71,11 +73,13 @@ export class AuthService implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
+    debugger;
+    console.log('inside canActivate function .......');
       if (this.isAuthenticated()) {
-        let userRole = localStorage.getItem('Role');
-        if (next.data.role) {
-          if (userRole == next.data.role) return true;
-        }
+        console.log('passed isAuthenticated()');
+        let userEmail = localStorage.getItem('LoginUser');
+        console.log('userEmail is --> ', userEmail);
+        return true;
       } else {
         this.logout();
       }
@@ -85,10 +89,11 @@ export class AuthService implements CanActivate {
    */
   /**
    * check for expiration and if token is still existing or not
-   * @return {boolean}
    */
   isAuthenticated(): boolean {
-    let res = localStorage.getItem('Token') !== null && !this.isTokenExpired();
+    debugger;
+    const res = localStorage.getItem('Token') !== null && !this.isTokenExpired();
+    console.log('current token is --> ', localStorage.getItem('Token'));
 
     return res;
   }
@@ -96,6 +101,7 @@ export class AuthService implements CanActivate {
   // simulate jwt token is valid
   // https://github.com/theo4u/angular4-auth/blob/master/src/app/helpers/jwt-helper.ts
   isTokenExpired(): boolean {
+    debugger;
     let token = this.decode();
     return token.exp ? false : true;
   }
@@ -104,6 +110,7 @@ export class AuthService implements CanActivate {
    */
 
   decode() {
+    debugger;
     return decode(localStorage.getItem('Token'));
   }
 }
