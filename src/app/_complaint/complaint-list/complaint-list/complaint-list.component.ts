@@ -99,7 +99,8 @@ export class ComplaintListComponent implements OnInit {
 
   openComplaintDialog(complaintModel: ComplaintModel) {
     const dialogConfig = new MatDialogConfig();
-
+    dialogConfig.disableClose = true;
+    
     let complainModel: ComplaintModel;
     dialogConfig.data = complaintModel;
     this.dialog.open(ComplainViewDialogComponent, dialogConfig);

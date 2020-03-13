@@ -1,17 +1,67 @@
-.Campaigns-Card {
-    width: 866px;
-    height: 797px;
-    object-fit: contain;
+
+.justifyTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  /* box-shadow: 0 6px 34px 0 rgba(231, 230, 230, 0.5);  */
+}
+
+  mat-dialog-container{
+    padding: 0px !important;
   }
 
-.Rectangle {
+  .Card {
     width: 865px;
+    border-radius: 8px;
+    background-color: #ffff;
+    position: relative!important;
+    
+  }
+
+  .Rectangle {
+    /* width: 100%;
     height: 107px;
     border-radius: 8px;
-    box-shadow:  0 6px 6px -6px gray;
-    /* box-shadow: 0 6px 34px 0 rgba(231, 230, 230, 0.5); */
-    background-color: #ffff;
-    padding: 20px;
+    box-shadow: 0 6px 34px 0 rgba(231, 230, 230, 0.5); */
+    /* background-color: #ffff; */
+   /* padding: 20px; */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.29;
+    color: var(--black);
+  }
+
+  .Issue-ID {
+    width: 200px;
+    height: 31px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    color: #bd0000;
+  }
+
+  mat-dialog-content{
+    padding: 0px 67px;
+  }
+
+  mat-label{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    color: #8a8a8a;
+  }
+  
+  .Issue-ID-27276 .text-style-1 {
+    color: var(--black);
   }
 
 p {
@@ -46,14 +96,16 @@ p {
 .mat-dialog-actions{
   display: flex;
   justify-content: flex-end;
+  padding: 40px 0px;
 }
+
 .mat-dialog-actions > button
 {
-  margin-left: 30px;
+  margin-right: 80px;
   width: 15%;
   height: 53px;
   border-radius: 3.6px;
-  border: solid 0.9px #bd0000;
+  border: solid 0.9px hsl(0, 100%, 37%);
   background-color: #ffff;
   color: #bd0000;
   font-size: 18px;
@@ -66,3 +118,6 @@ p {
   color: #ffff
 }
 
+/* ::ng-deep .mat-dialog-title{
+  padding: 0px;
+} */

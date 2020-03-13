@@ -15,13 +15,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatStepperModule, MatFormField,MatSortModule , MatFormFieldModule, MatInputModule, MatSelectModule ,MatPaginatorModule, MatGridListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { ComplaintListComponent } from './_complaint/complaint-list/complaint-list/complaint-list.component';
 import { ComplainViewDialogComponent } from './_complaint/complain-view-dialog/complain-view-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { ChangePasswordComponent } from './_password/change-password/change-password.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -30,9 +30,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MainNavComponent,
     ComplaintCreateComponent,
     ComplaintListComponent,
-    ComplainViewDialogComponent
+    ComplainViewDialogComponent,
+    ChangePasswordComponent
   ],
   imports: [
+    MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -48,7 +50,6 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FlexLayoutModule,
     MatFormFieldModule,
     HttpClientModule,
     MatTableModule,
@@ -56,6 +57,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSortModule,
     MatDialogModule,
     MatGridListModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

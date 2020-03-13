@@ -25,6 +25,7 @@ export class ComplainViewDialogComponent implements OnInit {
   }
 
   close() {
+    debugger
     this.dialogRef.close();
   }
 

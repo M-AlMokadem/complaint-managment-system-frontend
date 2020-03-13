@@ -63,7 +63,7 @@
   }
 
 .tableHeader{
-  font-family: Avenir;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 14.6px;
   font-weight: 900;
   font-stretch: normal;
@@ -111,4 +111,8 @@
 
 .mat-button.no-hover ::ng-deep .mat-button-focus-overlay {
   background: none;
+}
+
+::ng-deep .mat-dialog-container{
+  padding: 0;
 }
