@@ -53,7 +53,8 @@ export class LoginComponent implements OnInit {
         debugger;
         this.loader = false;
         localStorage.setItem('Token', res.token);
-        localStorage.setItem('Email', JSON.stringify(this.loginModel.email));
+        localStorage.setItem('Email', this.loginModel.email );
+        // localStorage.setItem('Email', JSON.stringify(this.loginModel.email));
         console.log('logged in with token ==> ', res.token);
         this._router.navigate(['/complaint/create']);
       },
