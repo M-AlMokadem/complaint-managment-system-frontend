@@ -46,16 +46,19 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    debugger;
     this.loader = true;
     this._authservice.login(this.loginModel).subscribe(
       (res: any) => {
+        debugger;
         this.loader = false;
-        localStorage.setItem('Token', res.Tokken);
-        localStorage.setItem('LoginUser', JSON.stringify(this.loginModel));
+        localStorage.setItem('Token', res.token);
+        localStorage.setItem('Email', JSON.stringify(this.loginModel.email));
         console.log('logged in with token ==> ', res.token);
         this._router.navigate(['/complaint/create']);
       },
       (error: any) => {
+        debugger;
         this.loader = false;
         console.log(error);
         if (error.error.text == 'User Already Logged In') {

@@ -1,0 +1,118 @@
+.Issues-view {
+  width: 1440px;
+  height: 1024px;
+  background-color: var(--white);
+}
+
+/* search Input */
+.no-line{
+  width: 70%;
+  height: 51px;
+}
+
+::ng-deep .mat-form-field-placeholder{
+  color:#c6cbd4;
+}
+
+.mat-icon{
+  color:#c6cbd4;
+}
+
+::ng-deep .mat-focused .mat-form-field-placeholder{
+  color:#c6cbd4;
+}
+
+/* sorting & search */
+.flex-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-container > mat-form-field {
+  margin-left: 9px;
+}
+
+::ng-deep .Grey-Outline .mat-form-field {
+  display: none;
+  width: 147px;
+  height: 36px;
+}
+
+/* mat table */
+.mat-elevation-z8{
+  width: 100%;
+  height: 100%;
+  border-radius: 6.3px;
+  background-color: var(--white);
+}
+
+.mat-row:nth-child(even){
+  background-color:#ffffff;
+  }
+
+.mat-row:nth-child(odd){
+  background-color:rgba(223,226,230,0.1);
+  }
+
+  td.mat-cell{
+    border-bottom-style: none;
+  }
+
+  th.mat-header-cell{
+    border-bottom-style: none;
+  }
+
+.tableHeader{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14.6px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: #919191;
+} 
+
+.mat-button {
+  width: 89px;
+  height: 35px;
+  border-radius: 3.1px;
+  border: solid 1px #bd0000;
+  color:#bd0000 ;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+}
+
+.circle{
+  border: solid 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: transparent;
+  display: inline-block;
+}
+
+.yellow {
+  background-color: #f5a623;
+}
+
+.green{
+  background-color:#03c990;
+}
+
+.blue{
+  background-color:#4a90e2;
+}
+
+.deep-red{
+  background-color:#bd0000;
+}
+
+.mat-button.no-hover ::ng-deep .mat-button-focus-overlay {
+  background: none;
+}
+
+::ng-deep .mat-dialog-container{
+  padding: 0;
+}

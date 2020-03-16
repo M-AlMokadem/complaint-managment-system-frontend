@@ -12,18 +12,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatStepperModule, MatFormField, MatFormFieldModule, MatInputModule, MatSelectModule, MatGridListModule } from '@angular/material';
+import { MatStepperModule, MatFormField, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatPaginatorModule, MatGridListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
 import { UpdateUserDialogComponent } from './users/update-user-dialog/update-user-dialog.component';
-
+import { ComplaintListComponent } from './_complaint/complaint-list/complaint-list/complaint-list.component';
+import { ComplainViewDialogComponent } from './_complaint/complain-view-dialog/complain-view-dialog.component';
+import { ChangePasswordComponent } from './_password/change-password/change-password.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -34,8 +35,12 @@ import { UpdateUserDialogComponent } from './users/update-user-dialog/update-use
     UsersComponent,
     AddUserDialogComponent,
     UpdateUserDialogComponent,
+    ComplaintListComponent,
+    ComplainViewDialogComponent,
+    ChangePasswordComponent
   ],
   imports: [
+    MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -51,13 +56,17 @@ import { UpdateUserDialogComponent } from './users/update-user-dialog/update-use
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FlexLayoutModule,
     MatFormFieldModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
     MatGridListModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],
