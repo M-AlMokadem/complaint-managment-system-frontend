@@ -116,3 +116,5 @@
 ::ng-deep .mat-dialog-container{
   padding: 0;
 }
+
+.cdk-program-focused { display: none; }

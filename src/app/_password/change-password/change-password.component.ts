@@ -53,7 +53,7 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit(): void {
     this.resetPasswordForm = this._formBuilder.group({
       passwordGroup: this._formBuilder.group({
-        password: ['', [Validators.required]],
+        password: ['', [Validators.required,Validators.pattern('(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{7,}')]],
         confirmPassword: ['', [Validators.required]]
       }, {validator: ComparePassword("password", "confirmPassword")})
     });

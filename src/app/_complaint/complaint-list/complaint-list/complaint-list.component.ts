@@ -103,6 +103,7 @@ export class ComplaintListComponent implements OnInit {
     
     let complainModel: ComplaintModel;
     dialogConfig.data = complaintModel;
+    dialogConfig.autoFocus = true;
     this.dialog.open(ComplainViewDialogComponent, dialogConfig);
 
     const dialogRef = this.dialog.open(ComplainViewDialogComponent, dialogConfig);
@@ -111,11 +112,11 @@ export class ComplaintListComponent implements OnInit {
       (data: ComplaintModel) => {
         console.log("Dialog output:", data.id);
         complainModel = data;
-      });
-
-    this.service.post(complainModel, 'complaint', 'put').subscribe(res =>
-      console.log(res));
-    this.getAllComplaints();
+        this.service.put(complainModel, 'complaint', 'update').subscribe(res =>
+          {
+            this.getAllComplaints();
+          });         
+        });   
   }
 
   private fillResult(res: Object) {
