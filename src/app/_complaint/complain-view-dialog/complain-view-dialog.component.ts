@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ComplaintModel } from '../complaintModels/createComplaintModel';
+import { publicService } from 'src/app/core/publicService.service';
 
 @Component({
   selector: 'app-complain-view-dialog',
@@ -12,6 +13,7 @@ export class ComplainViewDialogComponent implements OnInit {
   complaintModel: ComplaintModel;
 
   constructor(
+    private service: publicService,
     private dialogRef: MatDialogRef<ComplainViewDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
     this.complaintModel = data;
@@ -25,14 +27,12 @@ export class ComplainViewDialogComponent implements OnInit {
   }
 
   close() {
-    debugger
     this.dialogRef.close();
   }
 
   changeComplaintStatus(status:string)
   {
     this.complaintModel.status = status;
-    console.log(this.complaintModel);
-    
+    console.log(this.complaintModel); 
   }
 }

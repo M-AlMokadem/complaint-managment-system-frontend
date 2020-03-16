@@ -1,7 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { publicService } from 'src/app/core/publicService.service';
+
+function passwordMatcher(c: AbstractControl): { [key: string]: boolean } | null {
+  const passwordControl = c.get('newPassword');
+  const confirmPasswordControl = c.get('confirmNewPassword');
+
+  if (passwordControl.pristine || confirmPasswordControl.pristine) {
+    return null;
+  }
+
+  if (passwordControl.value === confirmPasswordControl.value) {
+    return null;
+  }
+  return { 'matchPassword': true };
+}
+
+export function ComparePassword(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+    const matchingControl = formGroup.controls[matchingControlName];
+
+    if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+      return;
+    }
+
+    if(control.value == matchingControl.value){
+      return matchingControl.setErrors(null);
+    }
+
+    return matchingControl.setErrors({ mustMatch: true });   
+  };
+}
 
 @Component({
   selector: 'app-change-password',
@@ -10,6 +41,8 @@ import { publicService } from 'src/app/core/publicService.service';
 })
 export class ChangePasswordComponent implements OnInit {
   resetPasswordForm: FormGroup;
+  hide:boolean = true;
+  hidePassword:boolean = true;
 
   constructor(
     private _service: publicService,
@@ -19,11 +52,15 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.resetPasswordForm = this._formBuilder.group({
-      // passwordGroup: this._formBuilder.group({
-        newPassword: ['', [Validators.required, Validators.pattern('(?=.*[a-zA-Z])(?=.*[a-zA-Z])(?=.*[0-9]).{7,20}')]],
-        confirmNewPassword:['', [Validators.required,Validators.pattern('(?=.*[a-zA-Z])(?=.*[a-zA-Z])(?=.*[0-9]).{7,20}')]]   
-       // confirmNewPassword:['', [Validators.required,Validators.pattern('(?=.*[a-zA-Z])(?=.*[a-zA-Z])(?=.*[0-9]).{7,20}'), this.matchValues('password')]]
-      // })
+      passwordGroup: this._formBuilder.group({
+        password: ['', [Validators.required]],
+        confirmPassword: ['', [Validators.required]]
+      }, {validator: ComparePassword("password", "confirmPassword")})
     });
   }
+
+  changePassword() {
+
+  }
+  
 }
