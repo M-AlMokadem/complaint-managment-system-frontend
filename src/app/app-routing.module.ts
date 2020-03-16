@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
-
+import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'complaint/create', component: ComplaintCreateComponent},
-
+  { path: 'login', component: LoginComponent },
+  { path: 'complaint/create', component: ComplaintCreateComponent },
+  { path: 'users', component: UsersComponent },
 ];
 
 @NgModule({
