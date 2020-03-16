@@ -40,4 +40,13 @@ export class publicService {
 
     }
   }
+
+  put(data: any, apiController: string, action?: string): Observable<any> {
+    console.log(data);
+    debugger;
+
+    return this.http.put<any>(
+      environment.serverUrl + apiController + '/' + action, data
+    );
+  }
 }

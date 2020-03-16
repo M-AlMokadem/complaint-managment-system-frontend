@@ -1,0 +1,54 @@
+  .Mask  {
+    width: 1170px;
+    height: 669px;
+    border-radius: 6.3px;
+    background-color: var(--white);
+  }  
+
+  .odd {
+    background-color: #dfe2e6;
+}
+.even {
+    background-color: #ffffff;
+}
+
+.AddButton
+{
+    color: white;
+    background-color: #bd0000;
+    margin-bottom: 20px;
+    margin-left: 86.5%;
+    width: 160px;
+    height: 40px;
+}
+
+.mat-row:nth-child(even){
+    background-color:#ffffff;
+    }
+  
+  .mat-row:nth-child(odd){
+    background-color:rgba(223,226,230,0.24);
+    }
+  
+    td.mat-cell{
+      border-bottom-style: none;
+    }
+  
+    th.mat-header-cell{
+      border-bottom-style: none;
+    }
+
+    .text{
+        font-family: Roboto, "Helvetica Neue", sans-serif;       
+        font-size: 14.6px;
+        /* font-weight: 900; */
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.71;
+        letter-spacing: normal;            
+    }
+
+    .tableContentText
+    {
+        color: #333333;
+    }

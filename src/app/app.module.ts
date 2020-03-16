@@ -12,14 +12,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatStepperModule, MatFormField,MatSortModule , MatFormFieldModule, MatInputModule, MatSelectModule ,MatPaginatorModule, MatGridListModule } from '@angular/material';
+import { MatStepperModule, MatFormField, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatPaginatorModule, MatGridListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule} from '@angular/material/table';
+import { UsersComponent } from './users/users.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
+import { UpdateUserDialogComponent } from './users/update-user-dialog/update-user-dialog.component';
 import { ComplaintListComponent } from './_complaint/complaint-list/complaint-list/complaint-list.component';
 import { ComplainViewDialogComponent } from './_complaint/complain-view-dialog/complain-view-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import { ChangePasswordComponent } from './_password/change-password/change-password.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
@@ -29,6 +32,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     LoginComponent,
     MainNavComponent,
     ComplaintCreateComponent,
+    UsersComponent,
+    AddUserDialogComponent,
+    UpdateUserDialogComponent,
     ComplaintListComponent,
     ComplainViewDialogComponent,
     ChangePasswordComponent
@@ -57,9 +63,13 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatSortModule,
     MatDialogModule,
     MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
     FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddUserDialogComponent]
 })
 export class AppModule { }
