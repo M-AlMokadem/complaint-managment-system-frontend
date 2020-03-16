@@ -1,0 +1,30 @@
+.saveButton
+{
+    color: white;
+    background-color: #bd0000;
+    /* margin-left: 70%; */
+    width: 142px;
+    height: 53px;
+    border-radius: 3.6px;
+}
+.cancelButton
+{
+    color:#bd0000 ;
+    border-style: solid;
+    border-color: #bd0000;
+    width: 142px;
+    height: 53px;
+    border-radius: 3.6px;
+}
+.title
+{
+
+    font-family: Roboto, "Helvetica Neue", sans-serif;       
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.23px;  
+    color: #bd0000;
+}
