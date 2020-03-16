@@ -17,6 +17,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
+import { UpdateUserDialogComponent } from './users/update-user-dialog/update-user-dialog.component';
 
 
 @NgModule({
@@ -25,6 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     MainNavComponent,
     ComplaintCreateComponent,
+    UsersComponent,
+    AddUserDialogComponent,
+    UpdateUserDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +55,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     HttpClientModule,
     MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddUserDialogComponent]
 })
 export class AppModule { }
