@@ -27,22 +27,30 @@ export class AuthService implements CanActivate {
     );
   }
   logout() {
+    debugger;
     console.log('isnide logout Function()');
-    let LoginUser = JSON.parse(localStorage.getItem('LoginUser'));
-    if (LoginUser !== null) {
+    let email = JSON.parse(localStorage.getItem('Email'));
+    if (email == null) {
+      localStorage.clear();
+      console.log('cleared local storage', localStorage.getItem('Email'));
+      // window.location.replace('http://localhost:85/api/account/login');
+      window.location.replace('http://localhost:4200/login');
+
       this.http
-        .post<LoginModel>(environment.serverUrl + 'account/logout', LoginUser)
+        .post<LoginModel>(environment.serverUrl + 'account/logout', email)
         .subscribe(
           success => {
             localStorage.clear();
-            window.location.replace('http://localhost:85/api/account/login');
+            window.location.replace('http://localhost:4200/login');
+
+            // window.location.replace('http://localhost:85/api/account/login');
             // window.location.replace('http://localhost:4200/login');
             //  window.location.replace('http://10.230.196.38/smartwallettest/login');
             //window.location.replace('http://10.230.196.38/SmartWalletUI/login');
           },
           error => {
             localStorage.clear();
-            window.location.replace('http://localhost:85/api/account/login');
+            window.location.replace('http://localhost:4200/login');
             // window.location.replace('http://localhost:4200/login');
             // window.location.replace('http://10.230.196.38/smartwallettest/login');
             //window.location.replace('http://10.230.196.38/SmartWalletUI/login');
@@ -77,8 +85,8 @@ export class AuthService implements CanActivate {
     console.log('inside canActivate function .......');
       if (this.isAuthenticated()) {
         console.log('passed isAuthenticated()');
-        let userEmail = localStorage.getItem('LoginUser');
-        console.log('userEmail is --> ', userEmail);
+        let email = localStorage.getItem('Email');
+        console.log('userEmail is --> ', email);
         return true;
       } else {
         this.logout();
