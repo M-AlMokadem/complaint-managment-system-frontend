@@ -22,17 +22,12 @@ export class ComplainViewDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  save() {
-    this.dialogRef.close(this.complaintModel);
-  }
+  // save() {
+  //   this.dialogRef.close(this.complaintModel);
+  // }
 
   close() {
     this.dialogRef.close(this.complaintModel);
   }
 
-  changeComplaintStatus(status:string)
-  {
-    this.complaintModel.status = status;
-    console.log(this.complaintModel); 
-  }
 }

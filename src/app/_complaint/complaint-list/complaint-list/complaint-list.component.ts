@@ -104,7 +104,6 @@ export class ComplaintListComponent implements OnInit {
     let complainModel: ComplaintModel;
     dialogConfig.data = complaintModel;
     dialogConfig.autoFocus = true;
-    this.dialog.open(ComplainViewDialogComponent, dialogConfig);
 
     const dialogRef = this.dialog.open(ComplainViewDialogComponent, dialogConfig);
 

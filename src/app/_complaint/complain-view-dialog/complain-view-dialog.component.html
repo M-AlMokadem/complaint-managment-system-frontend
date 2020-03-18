@@ -16,8 +16,7 @@
             <div class="col-4">
                 <mat-form-field appearance="outline">
                     <mat-label>Status</mat-label>
-                    <mat-select (selectionChange)="changeComplaintStatus($event.value)">
-                        <!-- <mat-option [value]="0" >All</mat-option> -->
+                    <mat-select [(ngModel)]="complaintModel.status">
                         <mat-option #selectedValue *ngFor="let item of statusList" [value]="item">
                             <div class="circle" [ngClass]="{'yellow': item =='Pending', 
                                'green': item =='Active',
@@ -47,6 +46,6 @@
 
     <mat-dialog-actions>
         <button mat-button  (click)="close()">Close</button>
-        <button mat-button  (click)="save()">Save</button>
+        <button mat-button  (click)="close()">Save</button>
     </mat-dialog-actions>
 </div>  
