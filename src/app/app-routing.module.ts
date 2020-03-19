@@ -13,11 +13,11 @@ import { UsersComponent } from './users/users.component';
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
-  { path: 'password/change', component: ChangePasswordComponent },
-  { path: 'complaint/create', component: ComplaintCreateComponent, canActivate: [AuthService] },
-  { path: 'complaint/list', component: ComplaintListComponent },
-  { path: 'view', component: ComplainViewDialogComponent },
-  { path: 'users', component: UsersComponent },
+  { path: 'password/change', component: ChangePasswordComponent, canActivate: [AuthService] },
+  { path: 'complaint/create', component: ComplaintCreateComponent},
+  { path: 'complaint/list', component: ComplaintListComponent, canActivate: [AuthService] },
+  { path: 'view', component: ComplainViewDialogComponent, canActivate: [AuthService] },
+  { path: 'users', component: UsersComponent , canActivate: [AuthService] },
 ];
 
 @NgModule({
