@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/core/auth.service';
 
 export class PasswordModel{
   password: string;
-  userId :string;
+  id :string;
 }
 
 export function ComparePassword(controlName: string, matchingControlName: string) {
@@ -51,22 +51,23 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   changePassword() {
-  // let passwordModel: PasswordModel = new PasswordModel();
-  // passwordModel.userId = this.getUserId();
-  // passwordModel.password = this.resetPasswordForm.controls["password"].value;
+  let passwordModel: PasswordModel = new PasswordModel();
+  passwordModel.id = this.getUserId();
+  passwordModel.password = this.resetPasswordForm.controls["password"].value;
 
-  // this._service.put(passwordModel,'','update').subscribe(res=>{
-  //   console.log(res);
-  // }, error=>{
-  //   console.log(error);
-  // });
+  this._service.put(passwordModel,'user','changePassword').subscribe(res=>{
+
+    console.log(res);
+  }, error=>{
+    console.log(error);
+  });
 
   }
 
   private getUserId()
   {
     let token = this._authService.decode();
-    return token.id;
+    return token._id;
   }
   
 }

@@ -11,7 +11,6 @@ import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
-
   { path: 'login', component: LoginComponent },
   { path: 'password/change', component: ChangePasswordComponent, canActivate: [AuthService] },
   { path: 'complaint/create', component: ComplaintCreateComponent},
