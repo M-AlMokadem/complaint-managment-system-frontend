@@ -78,5 +78,9 @@
   letter-spacing: normal;
   color: #a94442;
 }
-.mat-input-element {
+
+.loginImg{
+  display: flex;
+  align-content: center;
+  padding-top: 10%;
 }
