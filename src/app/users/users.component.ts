@@ -46,6 +46,15 @@ export class UsersComponent implements OnInit {
     EditDialogConfig.width = '811px';
     EditDialogConfig.height = '393px';
     this.matDialog.open(UpdateUserDialogComponent, EditDialogConfig);
+  deleteUser(user) {
+    debugger;
+    this.service.delete(user, 'user', 'delete').subscribe(
+      res => {
+        this.getAllusers();
+      },
+      error => {
+      }
+    );
   }
 
 }

@@ -46,4 +46,13 @@ export class publicService {
       environment.serverUrl + apiController + '/' + action, data
     );
   }
+
+
+  delete(data: any, apiController: string, action?: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: data
+    };
+    let url = environment.serverUrl + apiController + '/' + action;
+    return this.http.delete<any>(url, httpOptions);
+  }
 }
