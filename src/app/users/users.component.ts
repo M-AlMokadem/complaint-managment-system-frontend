@@ -35,17 +35,27 @@ export class UsersComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
   openAddDialog() {
-    this.matDialog.open(AddUserDialogComponent, {
+    const addDialogRef = this.matDialog.open(AddUserDialogComponent, {
       height: '393px',
       width: '811px',
     });
+
+    addDialogRef.afterClosed().subscribe(result => {
+      this.getAllusers();
+    });
+
   }
   openEditDialog(user) {
     const EditDialogConfig = new MatDialogConfig();
     EditDialogConfig.data = user;
     EditDialogConfig.width = '811px';
     EditDialogConfig.height = '393px';
-    this.matDialog.open(UpdateUserDialogComponent, EditDialogConfig);
+    const editDialogRef = this.matDialog.open(UpdateUserDialogComponent, EditDialogConfig);
+    editDialogRef.afterClosed().subscribe(result => {
+      this.getAllusers();
+    });
+  }
+
   deleteUser(user) {
     debugger;
     this.service.delete(user, 'user', 'delete').subscribe(
