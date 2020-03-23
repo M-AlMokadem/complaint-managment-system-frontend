@@ -13,7 +13,7 @@ import { UpdateUserDialogComponent } from './update-user-dialog/update-user-dial
 export class UsersComponent implements OnInit {
   constructor(private service: publicService, private matDialog: MatDialog) { }
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  displayedColumns = ['emailAddress', 'password', 'actions'];
+  displayedColumns = ['emailAddress', 'actions'];
   UsersList: userModel[] = [];
   dataSource = new MatTableDataSource<userModel>(this.UsersList);
 
@@ -25,6 +25,8 @@ export class UsersComponent implements OnInit {
     this.dataSource = new MatTableDataSource<userModel>();
     this.service.getAll('user').subscribe((data: userModel[]) => {
       this.fillResult(data);
+      console.log(data);
+      
     }, error => {
       console.error('There was an error!', error);
     });

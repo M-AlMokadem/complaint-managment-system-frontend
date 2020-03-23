@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
   loginModel: LoginModel;
   loginErrorMSG: string = '';
   loader: boolean;
+  isLoginSuccessfully:boolean;
+
   constructor(
     private _service: publicService,
     private _authservice: AuthService,
@@ -46,20 +48,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    debugger;
     this.loader = true;
     this._authservice.login(this.loginModel).subscribe(
       (res: any) => {
-        debugger;
         this.loader = false;
         localStorage.setItem('Token', res.token);
         localStorage.setItem('Email', this.loginModel.email );
         // localStorage.setItem('Email', JSON.stringify(this.loginModel.email));
         console.log('logged in with token ==> ', res.token);
         this._router.navigate(['/complaint/create']);
+        this.isLoginSuccessfully=true;
       },
       (error: any) => {
-        debugger;
         this.loader = false;
         console.log(error);
         if (error.error.text == 'User Already Logged In') {
