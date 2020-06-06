@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatStepperModule, MatFormField, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatPaginatorModule, MatGridListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintCreateComponent } from './_complaint/complaint-create/complaint-create.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +23,12 @@ import { UpdateUserDialogComponent } from './users/update-user-dialog/update-use
 import { ComplaintListComponent } from './_complaint/complaint-list/complaint-list/complaint-list.component';
 import { ComplainViewDialogComponent } from './_complaint/complain-view-dialog/complain-view-dialog.component';
 import { ChangePasswordComponent } from './_password/change-password/change-password.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {
+  MatStepperModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule,
+  MatPaginatorModule, MatGridListModule
+} from '@angular/material';
+
 
 @NgModule({
   declarations: [

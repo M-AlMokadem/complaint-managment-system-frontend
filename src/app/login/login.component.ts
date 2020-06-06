@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('Email', this.loginModel.email );
         // localStorage.setItem('Email', JSON.stringify(this.loginModel.email));
         console.log('logged in with token ==> ', res.token);
-        this._router.navigate(['/complaint/create']);
+        this._router.navigate(['/complaint/list']);
         this.isLoginSuccessfully=true;
       },
       (error: any) => {

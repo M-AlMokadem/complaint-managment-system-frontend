@@ -20,14 +20,14 @@ export class ComplaintCreateComponent implements OnInit {
   allIssues: IssueModel[];
 
   complaintObject: createComplaintModel = new createComplaintModel();
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
   options: FormGroup;
-  buildingControl = new FormControl('primary');
-  floorControl = new FormControl('primary');
-  issueControl = new FormControl('primary');
+  buildingControl = new FormControl('primary', Validators.required);
+  floorControl = new FormControl('primary', Validators.required);
+  issueControl = new FormControl('primary', Validators.required);
   fontSizeControl = new FormControl(16, Validators.min(10));
 
   // SelectedBuilding: any = -1;

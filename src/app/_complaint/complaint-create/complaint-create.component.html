@@ -1,5 +1,5 @@
-<p>complaint-create works!</p>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<!-- <p>complaint-create works!</p> -->
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
   <mat-step [stepControl]="firstFormGroup">
     <!-- <ng-template matStepLabel></ng-template>
         <label class="stepper-paragraph">Contact information</label>
@@ -11,7 +11,7 @@
         <p mat-body-strong mat-body-2>Contact information</p>
         <mat-form-field appearance="outline">
           <mat-label>Staff Id</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="staffidCtrl">
+          <input matInput placeholder="Placeholder" formControlName="staffidCtrl" name="staffId" required>
         </mat-form-field>
       </div>
 
@@ -19,7 +19,7 @@
         <p mat-body-strong mat-body-2>Location Information</p>
         <mat-form-field appearance="fill">
           <mat-label>Building</mat-label>
-          <mat-select formControlName="buildingControl">
+          <mat-select formControlName="buildingControl" required>
           <mat-option *ngFor="let item of allBuildings" [value]="item">{{item.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -27,7 +27,7 @@
       <div layout="row">
         <mat-form-field appearance="fill">
           <mat-label>Floor</mat-label>
-          <mat-select formControlName="floorControl">
+          <mat-select formControlName="floorControl" required>
               <mat-option *ngFor="let item of allFloors" [value]="item">{{item.name}}</mat-option>          
           </mat-select>
         </mat-form-field>
